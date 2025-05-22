@@ -1,0 +1,93 @@
+:root {
+  --wall-blue: #2121ff;
+  --dot-white: yellow;
+  --pacman-yellow: #ffcc00;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 2.5rem;
+  color: var(--pacman-yellow);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.score-board {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #111;
+  border-radius: 10px;
+  border: 2px solid #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 2px;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: black;
+  border: 4px solid #333;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.wall {
+  background-color: var(--wall-blue);
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px #1010aa;
+}
+
+.dot {
+  background-color: black;
+  position: relative;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 6px;
+  height: 6px;
+  background: var(--dot-white);
+  border-radius: 50%;
+  box-shadow: 0 0 5px white;
+}
+
+/* Estilos para los personajes con imágenes */
+.pacman, .ghost {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.controls-info {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #999;
+}
+
